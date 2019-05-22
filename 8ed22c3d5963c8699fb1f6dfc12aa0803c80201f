@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a538e92_dc6f76bf",
+        "filename": "payload_consumer/delta_performer.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1451,
+      "author": {
+        "id": 1375
+      },
+      "writtenOn": "2019-05-22T13:39:47Z",
+      "side": 1,
+      "message": "better remove then uncomment",
+      "revId": "8ed22c3d5963c8699fb1f6dfc12aa0803c80201f",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    }
+  ]
+}
