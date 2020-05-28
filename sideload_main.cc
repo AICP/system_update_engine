@@ -73,9 +73,9 @@ class SideloadDaemonState : public DaemonStateInterface,
                               status == UpdateStatus::VERIFYING || status == UpdateStatus::FINALIZING)) {
       // Split the progress bar in two parts for the two stages DOWNLOADING and
       // FINALIZING.
-      ReportStatus(base::StringPrintf("ui_print ======================="));
-      ReportStatus(base::StringPrintf("ui_print Flashing Dirty Unicorns"));
-      ReportStatus(base::StringPrintf("ui_print ======================="));
+      ReportStatus(base::StringPrintf("ui_print ===================================="));
+      ReportStatus(base::StringPrintf("ui_print Staging the files for AICP"));
+      ReportStatus(base::StringPrintf("ui_print ===================================="));
       ReportStatus(base::StringPrintf(
           "ui_print Step %d/3", status == UpdateStatus::DOWNLOADING ? 1 : 2));
       ReportStatus(base::StringPrintf("progress 0.3 0"));
@@ -84,10 +84,28 @@ class SideloadDaemonState : public DaemonStateInterface,
     if (status_ != status && (status == UpdateStatus::VERIFYING || status == UpdateStatus::FINALIZING)) {
       // Split the progress bar in two parts for the two stages DOWNLOADING and
       // FINALIZING.
+      ReportStatus(base::StringPrintf("ui_print "));
       ReportStatus(base::StringPrintf("ui_print ======================="));
-      ReportStatus(base::StringPrintf("ui_print Finalizing..."));
+      ReportStatus(base::StringPrintf("ui_print THANK YOU FOR FLASHING "));
       ReportStatus(base::StringPrintf("ui_print ======================="));
-       ReportStatus(base::StringPrintf(
+      ReportStatus(base::StringPrintf("ui_print "));
+      ReportStatus(base::StringPrintf("ui_print ****************************************"));
+      ReportStatus(base::StringPrintf("ui_print *    ##### ####****   ########****     *"));
+      ReportStatus(base::StringPrintf("ui_print *  ############**** ##########******   *"));
+      ReportStatus(base::StringPrintf("ui_print * ####     ####****#####  ****  *****  *"));
+      ReportStatus(base::StringPrintf("ui_print * ###       ###****####   ****   ****  *"));
+      ReportStatus(base::StringPrintf("ui_print * ####     ####****#####  ****  *****  *"));
+      ReportStatus(base::StringPrintf("ui_print *  ############**** ##########******   *"));
+      ReportStatus(base::StringPrintf("ui_print *    ##### ####****   ########****     *"));
+      ReportStatus(base::StringPrintf("ui_print *                         ****         *"));
+      ReportStatus(base::StringPrintf("ui_print *                         ****         *"));
+      ReportStatus(base::StringPrintf("ui_print * www.aicp-rom.com - Get your flash ON *"));
+      ReportStatus(base::StringPrintf("ui_print ****************************************"));
+      ReportStatus(base::StringPrintf("ui_print "));
+      ReportStatus(base::StringPrintf("ui_print ==========="));
+      ReportStatus(base::StringPrintf("ui_print ANDROID 11 "));
+      ReportStatus(base::StringPrintf("ui_print ==========="));
+      ReportStatus(base::StringPrintf(
            "ui_print Step %d/3", status == UpdateStatus::VERIFYING ? 2 : 3));
       ReportStatus(base::StringPrintf("progress 0.6 0"));
      }
