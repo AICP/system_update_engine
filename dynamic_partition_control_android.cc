@@ -780,6 +780,11 @@ bool DynamicPartitionControlAndroid::UpdatePartitionMetadata(
     MetadataBuilder* builder,
     uint32_t target_slot,
     const DeltaArchiveManifest& manifest) {
+  // Check preconditions.
+  CHECK(!GetVirtualAbFeatureFlag().IsEnabled() || IsRecovery())
+      << "UpdatePartitionMetadata is called on a Virtual A/B device "
+         "but source partitions is not deleted. This is not allowed.";
+
   // If applying downgrade from Virtual A/B to non-Virtual A/B, the left-over
   // COW group needs to be deleted to ensure there are enough space to create
   // target partitions.
